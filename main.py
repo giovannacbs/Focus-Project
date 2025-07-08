@@ -28,7 +28,7 @@ def focus(date):
 
     df.set_index(df.columns[0], inplace=True)
     df_focus = df[['year', 'year+1', 'year+2', 'year+3']]
-    df_focus = df_focus.applymap(lambda x: str(x).replace(",", "."))
+    df_focus = df_focus.applymap(lambda x: pd.to_numeric(str(x).replace(",", "."), errors='coerce'))
 
     filter_list = [
         'IPCA (variação %)', 
