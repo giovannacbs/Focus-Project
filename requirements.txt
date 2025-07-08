@@ -3,3 +3,4 @@ uvicorn
 pandas
 numpy
 natural_pdf
+openpyxl
