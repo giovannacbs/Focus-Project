@@ -5,9 +5,17 @@ import io
 from natural_pdf import PDF 
 import numpy as np
 
+app = FastAPI()
+
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # ou use ['https://seuusuario.github.io'] se quiser restringir
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def focus(date):
     url = f'https://www.bcb.gov.br/content/focus/focus/R{date}.pdf'
