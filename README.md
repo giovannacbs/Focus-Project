@@ -6,11 +6,10 @@ Used by the frontend project: [Focus Site](https://github.com/giovannacbs/Focus-
 
 ## ✅ What it does
 
-- Downloads the Focus PDF for a given Friday
-- Extracts the forecast table
-- Converts the table to Excel (`.xlsx`)
+- Downloads the Focus PDF for a given Friday  
+- Extracts the forecast table using [**natural_pdf**](https://jsoma.github.io/natural-pdf/)  
+- Converts the table to Excel (`.xlsx`)  
 - Returns the file via API
-
 ## 📎 API
 
 ### `GET /get-excel?date=YYYYMMDD`
@@ -25,6 +24,10 @@ Used by the frontend project: [Focus Site](https://github.com/giovannacbs/Focus-
 - Only supports **Fridays** from **2022 onward**
 - PDFs are fetched directly from:  
   `https://www.bcb.gov.br/content/focus/focus/R{date}.pdf`
+
+## 🧠 Tech Notes
+
+- Table extraction is done using [**natural_pdf**](https://jsoma.github.io/natural-pdf/), a Python library for semantically-aware PDF parsing
 
 ## 📤 Deployed at
 
